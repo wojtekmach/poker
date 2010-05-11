@@ -11,8 +11,16 @@ module Poker
         assert_equal "A", @card.rank
       end
 
+      should "have a rank value" do
+        assert_equal 12, @card.rank_value
+      end
+
       should "have a suit" do
         assert_equal "s", @card.suit
+      end
+
+      should "have a suit value" do
+        assert_equal 3, @card.suit_value
       end
     end
   end
