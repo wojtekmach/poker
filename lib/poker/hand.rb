@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + '/../../ext/handeval/handeval'
+
 module Poker
   class Hand < Array
     def initialize(*str_or_ary)
@@ -11,6 +13,10 @@ module Poker
         end
       end
       super(@cards)
+    end
+
+    def value
+      HandEval.eval(*(@cards.map { |c| c.value }))
     end
   end
 end
