@@ -22,6 +22,10 @@ module Poker
       should "have a suit value" do
         assert_equal 3, @card.suit_value
       end
+
+      should "have a value" do
+        assert_equal 268442665, @card.value
+      end
     end
   end
 end
