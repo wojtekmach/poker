@@ -15,5 +15,17 @@ module Poker
         assert_kind_of Card, @hand[0]
       end
     end
+
+    should "initialize with array of cards" do
+      @hand = Hand.new(Card.new("As"), Card.new("Ks"))
+      assert "A", @hand[0].rank
+      assert "K", @hand[1].rank
+    end
+
+    should "initialize with array of strings" do
+      @hand = Hand.new(*%w{As Ks})
+      assert "A", @hand[0].rank
+      assert "K", @hand[1].rank
+    end
   end
 end
