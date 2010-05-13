@@ -7,6 +7,7 @@ module Poker
     attr_reader :rank, :rank_value, :suit, :suit_value
 
     def initialize(str)
+      @str = str
       @rank, @suit = str.split(//)
       @rank_value = RANKS.index(@rank)
       @suit_value = SUITS.index(@suit)
@@ -28,6 +29,10 @@ module Poker
     def value
       PRIMES[rank_value] | (rank_value << 8) | 0x8000 >> suit_value |
         (1 << (16 + rank_value))
+    end
+
+    def to_s
+      @str
     end
   end
 end

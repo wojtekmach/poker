@@ -26,6 +26,10 @@ module Poker
       should "have a value" do
         assert_equal 268442665, @card.value
       end
+
+      should "respond to #to_s" do
+        assert_equal "As", @card.to_s
+      end
     end
   end
 end
