@@ -31,6 +31,10 @@ module Poker
         assert @hand > Hand.new("5s 4s 3s 2s As")
         assert @hand == Hand.new("Ad Kd Qd Jd Td")
       end
+
+      should "respond to #to_s" do
+        assert_equal "As Ks Qs Js Ts", @hand.to_s
+      end
     end
 
     should "initialize with array of cards" do

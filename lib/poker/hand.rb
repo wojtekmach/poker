@@ -38,5 +38,9 @@ module Poker
     def <=>(hand)
       - (value <=> hand.value)
     end
+
+    def to_s
+      self.join(" ")
+    end
   end
 end
