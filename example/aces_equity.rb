@@ -23,8 +23,8 @@ end
 
 n.times {
   # indexes of used cards. Ac & Ad is always used
-  indexes = [48, 49]
-  hole1 = 48, 49
+  indexes = [12, 25]
+  hole1 = 12, 25
   hole2 = []
   
   hole2 << find_card(deck, indexes, 50)

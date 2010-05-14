@@ -2,8 +2,8 @@ module Poker
   class Deck < Array
     def initialize
       cards = []
-      Card::RANKS.each { |r|
-        Card::SUITS.each { |s|
+      Card::SUITS.each { |s|
+        Card::RANKS.each { |r|
           cards << Card.new(r+s)
         }
       }
