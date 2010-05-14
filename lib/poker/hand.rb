@@ -1,7 +1,8 @@
 require File.dirname(__FILE__) + '/../../ext/handeval/handeval'
 
 module Poker
-  class Hand < Array
+  class Hand
+    include Enumerable
     include Comparable
 
     def self.best(cards)
@@ -23,7 +24,6 @@ module Poker
           @cards = str_or_ary.map { |s| Card.new(s) }
         end
       end
-      super(@cards)
     end
 
     def value
@@ -48,8 +48,24 @@ module Poker
       - (value <=> hand.value)
     end
 
+    def [](index)
+      @cards[index]
+    end
+
+    def each(&block)
+      @cards.each(&block)
+    end
+
+    def size
+      @cards.size
+    end
+
     def to_s
-      self.join(" ")
+      @cards.join(" ")
+    end
+
+    def to_str
+      to_s
     end
   end
 end
