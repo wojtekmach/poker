@@ -55,5 +55,10 @@ module Poker
     should_recognize_rank "Royal Flush",    "As Ks Qs Js Ts"
     should_recognize_rank "Straight Flush", "Ks Qs Js Ts 9s"
     should_recognize_rank "Four of a Kind", "Ac Ad Ah As Ks"
+
+    should "get the best 5-card hand from 7 cards" do
+      cards = %w{ 2c 3c 4c Ac Ad Ah As }
+      assert_equal "Four of a Kind", Hand.best(cards).rank
+    end
   end
 end

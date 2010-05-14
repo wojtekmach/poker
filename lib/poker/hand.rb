@@ -4,6 +4,15 @@ module Poker
   class Hand < Array
     include Comparable
 
+    def self.best(cards)
+      best = nil
+      cards.combination(5).each do |c|
+        hand = Hand.new(*c)
+        best = hand if !best || hand > best
+      end
+      best
+    end
+
     def initialize(*str_or_ary)
       if str_or_ary.size == 1
         @cards = str_or_ary[0].split(/ /).map { |s| Card.new(s) }
