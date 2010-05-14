@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper.rb'
 module Poker
   class HandTest < Test::Unit::TestCase
     def self.should_recognize_value(expected, cards)
-      should "recognize rank of #{cards}" do
+      should "recognize value of #{cards}" do
         assert_equal expected, Hand.new(cards).value
       end
     end
