@@ -26,6 +26,11 @@ module Poker
       should "have cards" do
         assert_kind_of Card, @hand[0]
       end
+
+      should "be comparable" do
+        assert @hand > Hand.new("5s 4s 3s 2s As")
+        assert @hand == Hand.new("Ad Kd Qd Jd Td")
+      end
     end
 
     should "initialize with array of cards" do

@@ -2,6 +2,8 @@ require File.dirname(__FILE__) + '/../../ext/handeval/handeval'
 
 module Poker
   class Hand < Array
+    include Comparable
+
     def initialize(*str_or_ary)
       if str_or_ary.size == 1
         @cards = str_or_ary[0].split(/ /).map { |s| Card.new(s) }
@@ -31,6 +33,10 @@ module Poker
       return "Four of a Kind"  if v > 10
       return "Straight Flush"  if v > 1
       return "Royal Flush"     if v == 1
+    end
+
+    def <=>(hand)
+      - (value <=> hand.value)
     end
   end
 end
