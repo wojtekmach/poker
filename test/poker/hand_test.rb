@@ -8,6 +8,12 @@ module Poker
       end
     end
 
+    def self.should_recognize_rank(expected, cards)
+      should "recognize rank of #{cards}" do
+        assert_equal expected, Hand.new(cards).rank
+      end
+    end
+
     context "A hand" do
       setup do
         @hand = Hand.new("As Ks Qs Js Ts")
@@ -36,5 +42,9 @@ module Poker
 
     should_recognize_value(1, "As Ks Qs Js Ts")
     should_recognize_value(2, "Ks Qs Js Ts 9s")
+
+    should_recognize_rank "Royal Flush",    "As Ks Qs Js Ts"
+    should_recognize_rank "Straight Flush", "Ks Qs Js Ts 9s"
+    should_recognize_rank "Four of a Kind", "Ac Ad Ah As Ks"
   end
 end

@@ -18,5 +18,19 @@ module Poker
     def value
       HandEval.eval(*(@cards.map { |c| c.value }))
     end
+
+    def rank
+      v = value
+      return "High Card"       if v > 6185
+      return "Pair"            if v > 3325
+      return "Two Pair"        if v > 2467
+      return "Three of a Kind" if v > 1609
+      return "Straight"        if v > 1599
+      return "Flush"           if v > 322
+      return "Full House"      if v > 166
+      return "Four of a Kind"  if v > 10
+      return "Straight Flush"  if v > 1
+      return "Royal Flush"     if v == 1
+    end
   end
 end
