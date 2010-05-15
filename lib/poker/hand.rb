@@ -71,7 +71,8 @@ module Poker
         }
         return @cards.sort_by { |c|
           if h[c.rank_value + 1] > 0
-            - (h[c.rank_value + 1] * c.rank_value + 1) * 100 + c.suit_value
+            - ((h[c.rank_value + 1] * 10_000) + (c.rank_value + 1) * 100) +
+              c.suit_value
           else
             - c.rank_value + c.suit_value
           end

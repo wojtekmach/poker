@@ -73,6 +73,7 @@ module Poker
       assert_equal "2c 2d 2h 2s Ad", Hand.new("2s Ad 2d 2c 2h").to_s
       assert_equal "5c 4c 3c 2c Ad", Hand.new("2c 4c Ad 5c 3c").to_s
       assert_equal "Ac Tc 4c 3c 2c", Hand.new("2c 4c Tc Ac 3c").to_s
+      assert_equal "2c 2d 2s 5c 5d", Hand.new("2s 2d 2c 5d 5c").to_s
     end
   end
 end
