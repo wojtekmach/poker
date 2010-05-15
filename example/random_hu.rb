@@ -5,7 +5,8 @@ require 'poker'
 
 include Poker
 
-n = 10
+n = 1000
+heros, villians, splits = 0, 0, 0
 deck = Deck.new
 
 n.times {
@@ -35,10 +36,18 @@ n.times {
   case hand1 <=> hand2
   when 1
     puts "Hero wins"
+    heros += 1
   when -1
     puts "Villian wins"
+    villians += 1
   else
     puts "Split"
+    splits += 1
   end
   puts
 }
+
+puts "Total iterations: #{n}"
+puts "Hero wins:    #{heros}"    + " " + (1.0 * heros / n * 100).to_s + "%"
+puts "Villian wins: #{villians}" + " " + (1.0 * villians / n * 100).to_s + "%"
+puts "Splits:       #{splits}"   + " " + (1.0 * splits / n * 100).to_s + "%"
