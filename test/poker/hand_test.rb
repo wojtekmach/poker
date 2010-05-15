@@ -60,5 +60,19 @@ module Poker
       cards = %w{ 2c 3c 4c Ac Ad Ah As }
       assert_equal "Four of a Kind", Hand.best(cards).rank
     end
+
+    should "display cards with order" do
+      assert_equal "Ac Ad Qc Qd Kc", Hand.new("Kc Qd Ac Qc Ad").to_s
+      assert_equal "Ac Ad Qc Qd Kc", Hand.new("Kc Qc Ad Qd Ac").to_s
+      assert_equal "Ac Ad Qc Qd Kc", Hand.new("Kc Ad Ac Qc Qd").to_s
+      assert_equal "Tc Td Ac Qd 2c", Hand.new("2c Qd Ac Td Tc").to_s
+      assert_equal "Tc Td Ac Kd Qc", Hand.new("Qc Kd Ac Td Tc").to_s
+      assert_equal "Tc Td Ts Ac Qc", Hand.new("Ts Qc Ac Td Tc").to_s
+      assert_equal "Tc Td Ts Ac Ad", Hand.new("Ts Ad Ac Td Tc").to_s
+      assert_equal "Ac Ad As Tc Td", Hand.new("As Td Tc Ad Ac").to_s
+      assert_equal "2c 2d 2h 2s Ad", Hand.new("2s Ad 2d 2c 2h").to_s
+      assert_equal "5c 4c 3c 2c Ad", Hand.new("2c 4c Ad 5c 3c").to_s
+      assert_equal "Ac Tc 4c 3c 2c", Hand.new("2c 4c Tc Ac 3c").to_s
+    end
   end
 end
