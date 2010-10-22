@@ -1,4 +1,7 @@
-.*.sw*
+pkg/*
+*.gem
+.bundle
+*.sw*
 *.o
 *.so
 *.log
