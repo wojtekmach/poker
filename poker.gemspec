@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "ext"]
   s.extensions = ["ext/handeval/extconf.rb"]
 
+  s.add_development_dependency 'rake'
   s.add_development_dependency 'minitest', '~> 5.0'
 end

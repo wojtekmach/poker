@@ -7,6 +7,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     minitest (5.0.6)
+    rake (10.1.0)
 
 PLATFORMS
   ruby
@@ -14,3 +15,4 @@ PLATFORMS
 DEPENDENCIES
   minitest (~> 5.0)
   poker!
+  rake
