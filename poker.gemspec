@@ -19,4 +19,6 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib", "ext"]
   s.extensions = ["ext/handeval/extconf.rb"]
+
+  s.add_development_dependency 'minitest', '~> 5.0'
 end

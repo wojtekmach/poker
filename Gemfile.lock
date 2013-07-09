@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    poker (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    minitest (5.0.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (~> 5.0)
+  poker!
