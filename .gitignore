@@ -1,6 +1,6 @@
 pkg/*
 *.gem
-.bundle
+*.bundle
 *.sw*
 *.o
 *.so
