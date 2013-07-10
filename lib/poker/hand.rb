@@ -82,7 +82,7 @@ module Poker
       r = rank
       h = @cards.inject({}) { |h, c|
         r = c.rank_value + 1
-        h[r] = h[r] ? h[r] + 1 : 0
+        h[r] = h[r] ? h[r] + 1 : 1
         h
       }
 
