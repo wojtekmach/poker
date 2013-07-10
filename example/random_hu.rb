@@ -7,7 +7,17 @@ include Poker
 
 n = 1000
 heros, villians, splits = 0, 0, 0
-deck = Deck.new
+deck = Deck.default_deck
+
+class Poker::Deck
+  def shuffle!
+    @cards.shuffle!
+  end
+
+  def [](index)
+    @cards[index]
+  end
+end
 
 n.times {
   deck.shuffle!
