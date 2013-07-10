@@ -5,3 +5,4 @@ pkg/*
 *.o
 *.so
 *.log
+ext/handeval/Makefile
