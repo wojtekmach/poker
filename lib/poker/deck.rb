@@ -1,13 +1,22 @@
 module Poker
-  class Deck < Array
+  class Deck
+    include Enumerable
+
     def initialize
-      cards = []
+      @cards = []
       Card::SUITS.each { |s|
         Card::RANKS.each { |r|
-          cards << Card.new(r+s)
+          @cards << Card.new(r+s)
         }
       }
-      super(cards)
+    end
+
+    def each(&block)
+      @cards.each(&block)
+    end
+
+    def size
+      @cards.size
     end
   end
 end
