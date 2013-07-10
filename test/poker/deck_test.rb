@@ -18,5 +18,21 @@ module Poker
     it "has 4 suits" do
       assert_equal 4, @deck.map(&:suit).uniq.size
     end
+
+    describe "deal" do
+      before do
+        @card = @deck.deal
+      end
+
+      it "returns a card from the top of the deck" do
+        assert_kind_of Card, @card
+        assert_equal "2c", @card.to_s
+      end
+
+      it "removes that card from the deck" do
+        assert_equal 51, @deck.size
+        assert @deck.none? { |card| card == @card }
+      end
+    end
   end
 end

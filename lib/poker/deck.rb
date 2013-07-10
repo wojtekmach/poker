@@ -18,5 +18,9 @@ module Poker
     def size
       @cards.size
     end
+
+    def deal
+      @cards.shift
+    end
   end
 end
