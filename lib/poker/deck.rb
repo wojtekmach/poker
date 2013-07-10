@@ -2,6 +2,8 @@ module Poker
   class Deck
     include Enumerable
 
+    attr_reader :cards
+
     def self.default_deck
       cards = []
       Card::SUITS.each { |s|
@@ -10,6 +12,13 @@ module Poker
         }
       }
       new(cards)
+    end
+
+    def self.new_with(cards)
+      cards = cards.map { |card| Card.new(card) }
+      default_cards = default_deck.cards
+
+      new(cards + (default_cards - cards))
     end
 
     def initialize(cards)

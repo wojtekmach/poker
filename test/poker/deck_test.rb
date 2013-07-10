@@ -6,6 +6,18 @@ module Poker
       @deck = Deck.default_deck
     end
 
+    Class.new(self) do
+      before do
+        @deck = Deck.new_with(%w[As Ks])
+      end
+
+      it "can be initialized with particular cards at the top" do
+        @deck.deal.to_s.must_equal "As"
+        @deck.deal.to_s.must_equal "Ks"
+        @deck.deal.to_s.must_equal "2c"
+      end
+    end
+
     it "has 52 elements" do
       assert_equal 52, @deck.size
       @deck.each { |card| assert_kind_of Card, @deck.first }
