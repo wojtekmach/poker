@@ -2,13 +2,18 @@ module Poker
   class Deck
     include Enumerable
 
-    def initialize
-      @cards = []
+    def self.default_deck
+      cards = []
       Card::SUITS.each { |s|
         Card::RANKS.each { |r|
-          @cards << Card.new(r+s)
+          cards << Card.new(r+s)
         }
       }
+      new(cards)
+    end
+
+    def initialize(cards)
+      @cards = cards
     end
 
     def each(&block)

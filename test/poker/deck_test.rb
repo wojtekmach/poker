@@ -3,7 +3,7 @@ require 'test_helper'
 module Poker
   describe Deck do
     before do
-      @deck = Deck.new
+      @deck = Deck.default_deck
     end
 
     it "has 52 elements" do
