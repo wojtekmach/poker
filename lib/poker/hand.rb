@@ -64,34 +64,51 @@ module Poker
       r = rank
       if r == "Pair" || r == "Two Pair" || r == "Three of a Kind" ||
          r == "Full House" || r == "Four of a Kind"
-        h = @cards.inject({}) { |h, c|
-          r = c.rank_value + 1
-          h[r] = h[r] ? h[r] + 1 : 0
-          h
-        }
-        return @cards.sort_by { |c|
-          if h[c.rank_value + 1] > 0
-            - ((h[c.rank_value + 1] * 10_000) + (c.rank_value + 1) * 100) +
-              c.suit_value
-          else
-            - c.rank_value + c.suit_value
-          end
-        }.join(" ")
+        pairs_to_s
       elsif r == "Straight Flush" || r == "Straight"
-        return @cards.sort_by { |c|
-          if c.rank_value == 12
-            10_000
-          else
-            - (c.rank_value + 1) * 100 - c.suit_value
-          end
-        }.join(" ")
+        straights_to_s
+      else
+        high_card_to_s
       end
-      @cards.sort_by { |c| - (c.rank_value + 1) * 100 - c.suit_value }.
-        join(" ")
     end
 
     def to_str
       to_s
+    end
+
+    private
+
+    def pairs_to_s
+      r = rank
+      h = @cards.inject({}) { |h, c|
+        r = c.rank_value + 1
+        h[r] = h[r] ? h[r] + 1 : 0
+        h
+      }
+
+      @cards.sort_by { |c|
+        if h[c.rank_value + 1] > 0
+          - ((h[c.rank_value + 1] * 10_000) + (c.rank_value + 1) * 100) +
+            c.suit_value
+        else
+          - c.rank_value + c.suit_value
+        end
+      }.join(" ")
+    end
+
+    def straights_to_s
+      @cards.sort_by { |c|
+        if c.rank_value == 12
+          10_000
+        else
+          - (c.rank_value + 1) * 100 - c.suit_value
+        end
+      }.join(" ")
+    end
+
+    def high_card_to_s
+      @cards.sort_by { |c| - (c.rank_value + 1) * 100 - c.suit_value }.
+        join(" ")
     end
   end
 end
