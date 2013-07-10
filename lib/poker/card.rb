@@ -34,5 +34,17 @@ module Poker
     def to_s
       @str
     end
+
+    def hash
+      value
+    end
+
+    def eql?(other)
+      value == other.value
+    end
+
+    def ==(other)
+      value == other.value
+    end
   end
 end

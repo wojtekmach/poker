@@ -29,5 +29,11 @@ module Poker
     it "responds to #to_s" do
       assert_equal "As", @card.to_s
     end
+
+    it "can be compared" do
+      assert_equal Card.new("As"), Card.new("As")
+      refute_equal Card.new("As"), Card.new("Ks")
+      refute_equal Card.new("As"), Card.new("Ac")
+    end
   end
 end
