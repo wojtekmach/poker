@@ -1,7 +1,7 @@
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 
-file "lib/handeval/handeval.o" =>
+file "ext/handeval/handeval.o" =>
   Dir.glob("ext/handeval/*{.rb,.c}") do
   Dir.chdir("ext/handeval") do
     ruby "extconf.rb"
@@ -16,6 +16,6 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
-task :test => "lib/handeval/handeval.o"
+task :test => "ext/handeval/handeval.o"
 
 task :default => :test
