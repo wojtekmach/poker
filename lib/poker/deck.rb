@@ -37,6 +37,10 @@ module Poker
       @cards.size
     end
 
+    def shuffle
+      Deck.new(cards.shuffle)
+    end
+
     def deal
       @cards.shift
     end

@@ -46,5 +46,11 @@ module Poker
         assert @deck.none? { |card| card == @card }
       end
     end
+
+    it "can be shuffled" do
+      deck = Deck.default_deck
+      shuffled = deck.shuffle
+      refute_equal deck.cards.map(&:to_s), shuffled.cards.map(&:to_s)
+    end
   end
 end

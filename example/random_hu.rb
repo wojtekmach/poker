@@ -9,14 +9,8 @@ n = 1000
 heros, villians, splits = 0, 0, 0
 deck = Deck.default_deck
 
-class Poker::Deck
-  def shuffle!
-    @cards.shuffle!
-  end
-end
-
 n.times {
-  deck.shuffle!
+  deck = deck.shuffle
   hole1, hole2, board = [], [], []
 
   hole1 << deck[-1]
