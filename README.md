@@ -1,10 +1,18 @@
 # Poker
 
-[![Build Status](https://secure.travis-ci.org/wojtekmach/poker.png?branch=master)](http://travis-ci.org/wojtekmach/poker)
-[![Code Climate](https://codeclimate.com/github/wojtekmach/poker.png)](https://codeclimate.com/github/wojtekmach/poker)
-[![Dependency Status](https://gemnasium.com/wojtekmach/poker.png)](https://gemnasium.com/wojtekmach/poker)
-
 Ruby library for evaluating poker hands (with Cactus Kev's evaluator)
+
+[![Gem Version](http://img.shields.io/gem/v/poker.svg)][gem]
+[![Build Status](http://img.shields.io/travis/wojtekmach/poker.svg)][travis]
+[![Dependency Status](http://img.shields.io/gemnasium/wojtekmach/poker.svg)][gemnasium]
+[![Code Climate](http://img.shields.io/codeclimate/github/wojtekmach/poker.svg)][codeclimate]
+[![Coverage Status](http://img.shields.io/coveralls/wojtekmach/poker.svg)][coveralls]
+
+[gem]: https://rubygems.org/gems/poker
+[travis]: https://travis-ci.org/wojtekmach/poker
+[gemnasium]: https://gemnasium.com/wojtekmach/poker
+[codeclimate]: https://codeclimate.com/github/wojtekmach/poker
+[coveralls]: https://coveralls.io/r/wojtekmach/poker
 
 ## Examples
 
