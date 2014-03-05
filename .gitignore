@@ -6,3 +6,4 @@ pkg/*
 *.so
 *.log
 ext/handeval/Makefile
+/coverage
