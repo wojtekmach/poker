@@ -13,10 +13,6 @@ class Poker::Deck
   def shuffle!
     @cards.shuffle!
   end
-
-  def [](index)
-    @cards[index]
-  end
 end
 
 n.times {

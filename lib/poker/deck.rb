@@ -21,6 +21,10 @@ module Poker
       new(cards + (default_cards - cards))
     end
 
+    def [](index)
+      @cards[index]
+    end
+
     def initialize(cards)
       @cards = cards
     end

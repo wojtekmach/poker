@@ -10,13 +10,6 @@ include Poker
 wins = 0
 n = 3000
 
-class Poker::Deck
-
-  def [](index)
-    @cards[index]
-  end
-end
-
 deck = Deck.default_deck
 
 def find_card(deck, indexes, size)
